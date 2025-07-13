@@ -4,6 +4,7 @@ brew install --cask wechat
 brew install --cask qq
 brew install --cask google-chrome
 brew install --cask steam
+brew install --cask whatsapp
 brew install --cask sublime-text
 brew install --cask iterm2
 brew install --cask pycharm
