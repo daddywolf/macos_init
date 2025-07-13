@@ -1,7 +1,11 @@
 #!/bin/bash
 
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+# =======================================================
+# 阶段 1: 安装所有需要的工具和应用
+# =======================================================
+echo "阶段 1: 正在安装所有应用程序..."
 
+# --- 安装 Cask 应用 ---
 brew install --cask wechat
 brew install --cask qq
 brew install --cask google-chrome
@@ -20,25 +24,22 @@ brew install --cask discord
 brew install --cask notion
 brew install --cask tencent-meeting
 brew install --cask microsoft-office-businesspro
-brew install mas
 
+# --- 安装 App Store 应用 ---
+brew install mas
 mas install 1451685025 # wireguard
 
-# 自动更新
-brew tap homebrew/autoupdate
-brew autoupdate start
-
-brew cleanup
-
-echo "✅ 所有软件已尝试安装完毕！"
-
-# 确保 dockutil 已安装
+# --- 安装 Dock 配置工具 ---
 brew install dockutil
 
-echo "正在清空 Dock..."
+
+# =======================================================
+# 阶段 2: 配置 Dock
+# =======================================================
+echo "阶段 2: 正在配置 Dock..."
+
 dockutil --remove all --no-restart
 
-echo "正在按顺序添加应用..."
 dockutil --add '/Applications/Launchpad.app' --no-restart
 dockutil --add '/System/Applications/Safari.app' --no-restart
 dockutil --add '/Applications/Google Chrome.app' --no-restart
@@ -53,9 +54,19 @@ dockutil --add '/System/Applications/Music.app' --no-restart
 dockutil --add '/Applications/QQ.app' --no-restart
 dockutil --add '/Applications/WeChat.app' --no-restart
 dockutil --add '/System/Applications/App Store.app' --no-restart
-dockutil --add '/System/Applications/System Settings.app'
+dockutil --add '/System/Applications/System Settings.app' # 不带 --no-restart 来刷新 Dock
 
-brew remove dockutil
+
+# =======================================================
+# 阶段 3: 收尾工作
+# =======================================================
+echo "阶段 3: 正在设置自动更新并清理..."
+
+# 设置 Homebrew 自动更新
+brew tap homebrew/autoupdate
+brew autoupdate start
+
+# 执行一次最终的清理
 brew cleanup
 
-echo "✅ Dock 已按指定顺序重新排列！"
+echo "✅ 脚本执行完毕！"
