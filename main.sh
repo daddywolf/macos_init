@@ -16,8 +16,7 @@ brew install --cask baidunetdisk
 brew install --cask discord
 brew install --cask notion
 brew install --cask tencent-meeting
-brew install --cask microsoft-teams
-brew install --cask microsoft-office
+brew install --cask microsoft-office-businesspro
 brew install mas
 
 mas install 1451685025 # wireguard
