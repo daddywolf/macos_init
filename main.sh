@@ -84,4 +84,9 @@ brew autoupdate start
 # 执行一次最终的清理
 brew cleanup
 
+echo "正在引导用户授权屏幕录制权限..."
+
+# 使用 URL Scheme 直接打开“系统设置”并跳转到“屏幕录制”权限页面
+open "x-apple.systempreferences:com.apple.preference.security?Privacy_ScreenCapture"
+
 echo "✅ 脚本执行完毕！"
