@@ -1,8 +1,18 @@
 #!/bin/bash
 
-# =======================================================
-# 阶段 1: 安装所有需要的工具和应用
-# =======================================================
+# ==============================================================================
+# 在脚本开头请求并保持管理员权限
+# ==============================================================================
+echo "此脚本需要管理员权限来安装某些软件。"
+echo "请输入您的登录密码以继续（输入过程不可见）："
+
+# sudo -v 会更新用户现有的sudo时间戳，如果时间戳尚未存在，则会提示输入密码。
+sudo -v
+
+# 在后台启动一个循环，每隔60秒刷新一次sudo的时间戳，直到主脚本退出。
+while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+
+echo "权限获取成功，脚本开始执行..."
 echo "阶段 1: 正在安装所有应用程序..."
 
 # --- 安装 Cask 应用 ---
@@ -23,7 +33,12 @@ brew install --cask baidunetdisk
 brew install --cask discord
 brew install --cask notion
 brew install --cask tencent-meeting
-brew install --cask microsoft-office-businesspro
+brew install --cask microsoft-word
+brew install --cask microsoft-excel
+brew install --cask microsoft-powerpoint
+brew install --cask microsoft-outlook
+brew install --cask microsoft-teams
+brew install --cask onedrive
 
 # --- 安装 App Store 应用 ---
 brew install mas
