@@ -26,12 +26,8 @@ brew install --cask iterm2
 brew install --cask pycharm
 brew install --cask zerotier-one
 brew install --cask tor-browser
-brew install --cask windows-app
-brew install --cask omnissa-horizon-client
-brew install --cask deepl
+brew install --cask youdaodict
 brew install --cask baidunetdisk
-brew install --cask discord
-brew install --cask notion
 brew install --cask tencent-meeting
 brew install --cask microsoft-word
 brew install --cask microsoft-excel
@@ -40,9 +36,6 @@ brew install --cask microsoft-outlook
 brew install --cask microsoft-teams
 brew install --cask onedrive
 
-# --- 安装 App Store 应用 ---
-brew install mas
-mas install 1451685025 # wireguard
 
 # --- 安装 Dock 配置工具 ---
 brew install dockutil
