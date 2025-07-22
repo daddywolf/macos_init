@@ -23,9 +23,7 @@ brew install --cask steam
 brew install --cask whatsapp
 brew install --cask sublime-text
 brew install --cask iterm2
-brew install --cask pycharm
 brew install --cask zerotier-one
-brew install --cask tor-browser
 brew install --cask youdaodict
 brew install --cask baidunetdisk
 brew install --cask tencent-meeting
